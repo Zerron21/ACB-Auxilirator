@@ -18,13 +18,16 @@ if not exist %EDITOR_PATH% goto Config_Check_fail
 if not exist %BGM_PATH%\bgm.acb goto Config_Check_fail
 if not exist %BGM_PATH%\bgm.awb goto Config_Check_fail
 if not exist %SOUND_PATH%\bgm goto Config_Check_fail
-if %CREATE_IGNORE% == "true" goto Ignore_Creation
+if %CREATE_IGNORE% == "true" goto Create_Ignore_file
 goto AWB_Build
 
-:Ignore_Creation
+:Create_Ignore_file
 set SOUND_PATH=%SOUND_PATH:"=%
 break > Ignore.aem
 for /f %%G in ('dir %SOUND_PATH%\bgm /A:-D /B') do echo %SOUND_PATH%\bgm\%%G >> Ignore.aem
+echo msgbox.vbs >> Ignore.aem
+echo config.bat >> Ignore.aem
+echo prebuild.bat >> Ignore.aem
 goto AWB_Build
 
 :AWB_Build

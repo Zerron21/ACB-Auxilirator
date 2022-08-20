@@ -1,6 +1,5 @@
 Set shell = CreateObject("WScript.Shell")
 
-
 prompt = "Please make sure that the variables in config.bat file are set properly."
 title = "Config file is not set correctly!"
 
