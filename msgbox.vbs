@@ -1,8 +1,7 @@
-Set shell = CreateObject("WScript.Shell")
+Set shl = CreateObject("WScript.Shell")
 
-prompt = "Please make sure that the variables in config.bat file are set properly."
-title = "Config file is not set correctly!"
+msg = "Please make sure the paths in config.bat file are set properly! sorry."
+ttl = "Config file is not set correctly!"
 
-response = msgbox(prompt, 5, title)
-if (response = 4) then shell.Run "prebuild.bat"
-	
+answer = msgbox(msg, 53, ttl)
+Wscript.Echo answer

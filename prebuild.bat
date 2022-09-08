@@ -1,7 +1,7 @@
 @echo off
 :Initial_check
 title Building AWB file.
-if exist sound\bgm.awb goto Initial_check_fail
+if exist sound\bgm.awb goto eof
 goto Config_Check
 
 :Config_Check
@@ -37,11 +37,11 @@ rename %BGM_PATH%\bgm.awb bgm_original.awb
 copy /b %BGM_PATH%\bgm_original.acb %BGM_PATH%\bgm.acb
 copy /b %BGM_PATH%\bgm_original.awb %BGM_PATH%\bgm.awb
 
-start /w "" %EDITOR_PATH% %BGM_PATH%\bgm.acb
+start /w /min "" %EDITOR_PATH% %BGM_PATH%\bgm.acb
 
 robocopy %SOUND_PATH%\bgm %BGM_PATH%\bgm *.adx
 
-start /w "" %EDITOR_PATH% %BGM_PATH%\bgm
+start /w /min "" %EDITOR_PATH% %BGM_PATH%\bgm
 move %BGM_PATH%\bgm.acb %SOUND_PATH%
 move %BGM_PATH%\bgm.awb %SOUND_PATH%
 
@@ -62,10 +62,6 @@ if not exist %EDITOR_PATH% echo Make sure AcbEditor.exe is set in the config fil
 if not exist %BGM_PATH%\bgm.acb echo Make sure bgm.acb is set in the config file!
 if not exist %BGM_PATH%\bgm.awb echo Make sure the bgm.awb is in the same location as bgm.acb!
 if not exist %SOUND_PATH%\bgm echo Make sure the 'sound' folder is set in the config file! and that bgm subfolder contains the .adx files!
-pause
-start msgbox.vbs
-goto eof
 
-:Initial_check_fail
-echo Nothing needs to be done!
-goto eof
+for /f %%G in ('cscript msgbox.vbs') do set answer=%%G
+if %answer% == 4 goto Initial_check
