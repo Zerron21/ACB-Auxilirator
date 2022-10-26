@@ -14,6 +14,10 @@ The **$GAME** subfolder is optional, but it can be specified in the config file 
 Settings are handled from within the **config.bat** file, below is a list of acceptable default settings.
 
 ```batchfile
+:: Set the platform the mod is made for, Currently only "Nintendo Switch" & "PS4" are supported.
+:: If empty the script will throw an error.
+set PLATFORM="Nintendo Switch"
+
 :: Set the AcbEditor.exe filepath.
 :: Leave empty to use the default filepath: "Documents\SonicAudioTools\AcbEditor.exe"
 set EDITOR_PATH=""
@@ -25,9 +29,11 @@ set BGM_PATH=""
 
 :: Optional, Set the name of the subfolder containing the game specific bgm files.
 :: If empty, $BGM_PATH will use the "Documents\BGM" as the files location.
-set GAME="Persona5Royal"
+:: set GAME="Persona5Royal"
 
-:: Set the "sound" folder location relative to the script, usually $SOUND_PATH="sound" for aemulus.
+:: Set the "sound" folder location relative to the script, $SOUND_PATH="sound" for aemulus.
+:: This will be searched for a BGM folder that contains the audio files, e.g. %sound%\bgm\audio.adx.
+:: No need to include BASE for 2022 releases since it'll be add automatically based on PLATFORM.
 set SOUND_PATH="sound"
 
 :: Creates an "Ignore.aem" file that prevents aemulus from copying loose files into the mod output.
