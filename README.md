@@ -2,16 +2,12 @@
 A poorly written script that automates creating the needed .acb and .awb files needed in Aemulus Mod Manager for music modding.
 
 ## Dependencies
-* AcbEditor.exe from [SonicAudioTools](https://github.com/blueskythlikesclouds/SonicAudioTools/releases).
-* bgm.acb & bgm.awb from the game's [ps4R.cpk](https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-on-ps4/).
-
-- **AcbEditor.exe** should be placed in "...\Documents\SonicAudioTools\AcbEditor.exe"
-- **bgm.acb** & **bgm.awb** should be placed in "...\Documents\bgm\\**$GAME**"
-
-The **$GAME** subfolder is optional, but it can be specified in the config file to separate bgm files by game.
+* An unmodified copy of BGM.awb & BGM.acb and AcbEditor.exe from [SonicAudioTools](https://github.com/blueskythlikesclouds/SonicAudioTools/releases), 
+Both are included in the [PS4 Original BGM](https://gamebanana.com/mods/408773) and [Nintendo Switch Orignal](https://gamebanana.com/mods/408779) BGM mods availabe on [GameBanana](https://gamebanana.com/).
 
 ## Configuration
 Settings are handled from within the **config.bat** file, below is a list of acceptable default settings.
+**Default configs support the Original BGM mods out of the box.**
 
 ```batchfile
 :: Set the AcbEditor.exe filepath.
