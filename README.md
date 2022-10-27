@@ -3,7 +3,7 @@ A poorly written script that automates creating the needed .acb and .awb files n
 
 ## Dependencies
 * An unmodified copy of BGM.awb & BGM.acb and AcbEditor.exe from [SonicAudioTools](https://github.com/blueskythlikesclouds/SonicAudioTools/releases), 
-Both are included in the [PS4 Template Mod](https://gamebanana.com/mods/408773) BGM mods availabe on [GameBanana](https://gamebanana.com/).
+Both are included in the [PS4 Template Mod](https://gamebanana.com/mods/408773) BGM mod availabe on [GameBanana](https://gamebanana.com/).
 
 ## Configuration
 Settings are handled from within the **config.bat** file, below is a list of acceptable default settings.
