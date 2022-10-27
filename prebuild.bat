@@ -15,6 +15,7 @@ set SOUND_PATH=%SOUND_PATH:"=%
 :: Apply default paths.
 if "%PLATFORM%" == "" set PLATFORM=PS4
 if %EDITOR_PATH% == "" set EDITOR_PATH="..\%TEMPLATE_MOD%\Dependencies\SonicAudioTools\AcbEditor.exe"
+if not exist %EDITOR_PATH% set EDITOR_PATH="..\%TEMPLATE_MOD%\derp\SonicAudioTools\AcbEditor.exe"
 if "%PLATFORM%" == "Nintendo Switch" set TEMPLATE_MOD=%TEMPLATE_MOD%\BASE
 if %BGM_PATH% == "" set BGM_PATH="..\%TEMPLATE_MOD%\sound"
 
