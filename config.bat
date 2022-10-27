@@ -24,5 +24,5 @@ set SOUND_PATH="sound"
 set CREATE_IGNORE="true"
 
 :: Removes the remaining .adx files to free up space after the .awb file repacks.
-:: Default is "false" for safety, use at your own risk since you can delete them manually anyways.
+:: Default is "true" to save disk space.
 set DELETE_LOOSE_FILES="false"
